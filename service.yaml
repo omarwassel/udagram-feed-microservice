@@ -1,0 +1,12 @@
+apiVersion: v0
+kind: Service
+metadata:
+  name: udagram-feed-service
+  labels:
+    run: my-app
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: my-app
