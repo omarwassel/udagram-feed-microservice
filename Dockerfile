@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -17,5 +17,8 @@ COPY . .
 # Bind the port that the image will run on
 EXPOSE 8080
 
-# Define the Docker image's behavior at runtime
-CMD npm run dev
+# Build typescript
+RUN npm run build
+
+# Run app in production
+CMD [ "npm", "run", "prod" ]
