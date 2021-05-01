@@ -17,7 +17,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: udagram-feed-api-v0
-        image: omara7med/udagram-feed-microservice
+        image: omarahmed98/udagram-feed-microservice
         imagePullPolicy: Always  
         resources:
           requests:

@@ -20,5 +20,5 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push omara7med/udagram-feed-microservice
+  - docker push omarahmed98/udagram-feed-microservice
 
