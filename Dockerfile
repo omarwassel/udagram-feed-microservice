@@ -21,4 +21,4 @@ EXPOSE 8080
 RUN npm run build
 
 # Run app in production
-CMD [ "npm", "run", "prod" ]
+CMD [ "npm", "run", "dev"]

@@ -18,22 +18,22 @@ import {V0_FEED_MODELS} from './controller/v0/model.index';
 
   app.use(bodyParser.json());
 
-  // app.use(cors({
-  //   allowedHeaders: [
-  //     'Origin', 'X-Requested-With',
-  //     'Content-Type', 'Accept',
-  //     'X-Access-Token', 'Authorization',
-  //   ],
-  //   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  //   origin: config.url,
-  // }));
-  app.use(cors());
+  app.use(cors({
+    allowedHeaders: [
+      'Origin', 'X-Requested-With',
+      'Content-Type', 'Accept',
+      'X-Access-Token', 'Authorization',
+    ],
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    origin: config.url,
+  }));
+  // app.use(cors());
   app.get('/health', async (req: Request, res: Response) => {
     // Health check
     res.status(200).send('All clear')
   });
 
-  app.use('/api/v0/feed', FeedRouter);
+  app.use('/', FeedRouter);
 
   // Root URI call
   // app.get( '/', async ( req, res ) => {
